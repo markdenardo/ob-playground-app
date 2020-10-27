@@ -1,5 +1,4 @@
 import {React, useState } from 'react'
-import { Modal, Button } from 'react-materialize';
 
 function Card(strategies){
     // const [card, setCard] = useState[]
