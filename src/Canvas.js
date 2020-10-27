@@ -10,7 +10,7 @@ function Canvas(){
             .get('https://new-strategy.herokuapp.com/cards')
             .then(response => {
                 console.log(response)
-                setJoke(response.data)
+                setStrategy(response.data)
             })
     }
 
