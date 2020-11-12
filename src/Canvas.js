@@ -28,7 +28,7 @@ function Canvas(){
                     title="I am a CARD!"  
                 >
                     <ol>I am a very simple card.</ol>
-                    <ol>{strategy}</ol>
+                    {/* {strategy} */}
                     <ol><button onClick={hook}>card</button></ol>
                 </Card>
                 
