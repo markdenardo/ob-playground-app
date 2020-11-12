@@ -3,33 +3,35 @@ import { Row, Col, Icon, Card }  from 'react-materialize'
 import axios from 'axios'
 
 function Canvas(){
-    const [strategy, setStrategy] = useState('');
+    const [strategy, setStrategy] = useState({strategy: 'test the card'});
     
     const hook = () => {
         axios
-            .get('https://new-strategy.herokuapp.com/cards')
+            .get('https://new-strategy.herokuapp.com/cards/1')
             .then(response => {
-                console.log(response)
-                setStrategy(response.data)
+                console.log('response',response)
+                // debugger
+                setStrategy(response.data.data.attributes.strategy)
             })
     }
+
+    useEffect(hook, [])
 
     return( 
         <Row>
             <Col m={6} s={12} >
                 <Card
-                    actions={[
-                        <a key="1" href="#">This is a link</a>,
-                        <a key="2" href="#">This is a link</a>
-                    ]}
                     className="blue-grey darken-1"
                     closeIcon={<Icon>close</Icon>}
                     revealIcon={<Icon>more_vert</Icon>}
                     textClassName="white-text"
-                    title="I am a CARD!"
+                    title="I am a CARD!"  
                 >
-                    I am a very simple card.
+                    <ol>I am a very simple card.</ol>
+                    <ol>{strategy}</ol>
+                    <ol><button onClick={hook}>card</button></ol>
                 </Card>
+                
             </Col>
         </Row>
         )
