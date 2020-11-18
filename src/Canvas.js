@@ -3,19 +3,36 @@ import { Row, Col, Icon, Card }  from 'react-materialize'
 import axios from 'axios'
 
 function Canvas(){
-    const [strategy, setStrategy] = useState({strategy: 'test the card'});
-    
-    const hook = () => {
-        axios
-            .get('https://new-strategy.herokuapp.com/cards/1')
-            .then(response => {
-                console.log('response',response)
-                // debugger
-                setStrategy(response.data.data.attributes.strategy)
-            })
+    const [strategy, setStrategy] = useState('test the card');
+    const [cardId, setCardId] = useState(0);
+    const [strategies, setStrategies ] = useState([])
+
+    const getRandomInt = (max) => {
+        let num = Math.floor(Math.random() * Math.floor(max))
+        // return num
     }
 
-    useEffect(hook, [])
+    const getCard = () => {
+        setCardId(getRandomInt(466))
+
+        // console.log('cardId', cardId)
+        // fetchCard()
+    }
+
+    const fetchCards = () => {
+        // console.log('cardId', cardId)
+        axios
+            .get('https://new-strategy.herokuapp.com/cards')
+            .then(response => {
+                console.log('response',response)
+                debugger
+                // setStrategies()
+                // setStrategy(response.data.data.attributes.strategy)
+            })
+        console.log('strategy', strategy)
+    }
+
+    useEffect(fetchCards, [])
 
     return( 
         <Row>
@@ -28,8 +45,8 @@ function Canvas(){
                     title="I am a CARD!"  
                 >
                     <ol>I am a very simple card.</ol>
-                    {/* {strategy} */}
-                    <ol><button onClick={hook}>card</button></ol>
+                    {strategy}
+                    <ol><button onClick={getCard}>card</button></ol>
                 </Card>
                 
             </Col>
