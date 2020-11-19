@@ -13,10 +13,11 @@ function Canvas(){
     }
 
     const getCard = () => {
-    
+        let id = getRandomInt(466) - 1
+        let randomStrategy = array[id].attributes.strategy
             if (array.length !== 0){
-                setCardId(getRandomInt(466)-1)
-                setStrategy(array[cardId])
+                setCardId(id)
+                setStrategy(randomStrategy)
             }
     }
 
@@ -34,8 +35,6 @@ function Canvas(){
                             console.log('response.data.data', response.data.data)
                             setArray(response.data.data)
                             console.log('array', array)
-                            
-                            debugger
                         break
                         default:
                             setStrategy('loading')
