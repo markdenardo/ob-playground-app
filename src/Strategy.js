@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Card } from 'react-materialize'
 import axios from 'axios'
 const baseUrl = 'http://localhost:3001/api/cards'
-const cors = require('cors')
+// const cors = require('cors')
 
 
 function Strategy(){
