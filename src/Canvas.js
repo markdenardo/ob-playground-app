@@ -13,9 +13,10 @@ function Canvas(){
     }
 
     const getCard = () => {
-        let id = getRandomInt(466) - 1
-        let randomStrategy = array[id].attributes.strategy
+       
             if (array.length !== 0){
+                let id = getRandomInt(466) - 1
+                let randomStrategy = array[id].attributes.strategy
                 setCardId(id)
                 setStrategy(randomStrategy)
             }
