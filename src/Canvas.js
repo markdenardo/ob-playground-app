@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Row, Col, Icon, Card }  from 'react-materialize'
+import { Row, Col, Card }  from 'react-materialize'
 import axios from 'axios'
 
 function Canvas(){
@@ -50,19 +50,13 @@ function Canvas(){
 
     return( 
         <Row>
-            <Col m={6} s={12} >
-                <Card
-                    className="blue-grey darken-1"
-                    closeIcon={<Icon>close</Icon>}
-                    revealIcon={<Icon>more_vert</Icon>}
-                    textClassName="white-text"
-                    title="I am a CARD!"  
-                >
-                    <ol>I am a very simple card.</ol>
+            <Col m={1} s={1} >
+                <Card   className="blue-grey darken-1"
+                        textClassName="white-text">
+                    <ol>Oblique Strategies Playground</ol>
                         {strategy}
                     <ol><button onClick={getCard}>card</button></ol>
                 </Card>
-                
             </Col>
         </Row>
         )

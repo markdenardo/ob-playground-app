@@ -6,7 +6,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Canvas/>
-
+        <Canvas />
+        <Canvas />
       </header>
     </div>
   );
